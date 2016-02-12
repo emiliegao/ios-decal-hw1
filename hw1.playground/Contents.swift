@@ -22,8 +22,7 @@ class Words {
 //: ### variables the same type? If not, why?
 
 
-//: No, because in the init function, wordA and wordB can be null, but in the instance variables, they MUST be Strings.
-
+//: No, because in the init function, optionals are different types than Strings. When it's an optional, it allows the variable to be either null or a string. the exclamation point forces the variable to be a string, so if you input a null, it will error.
 
 //: ## Q2: Variable Types and Function Types
     class func arePalindromes(words: [String]) -> Bool {
@@ -42,15 +41,15 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: the compiler didn't like the for loop because instantiating i with "let" does not let us change the value later on.
-//: we have to return true if the function runs through the entire for loop and doesn't return false.
+//: the compiler didn't like the for loop because instantiating i with "let" does not let us change the value later on. Additionally, I changed var elements to let numelements because numelements will remain constant through the entire method.
+//: we have to return true if the function runs through the entire for loop and doesn't return false. Furthermore, I also changed it from a regular function to a class function
 
 
 //: ## Q3: More Functions and Object Initialization
     func isAnagram() -> Bool {
         var countLetters = [Character : Int]()
-        var lenA = self.wordA.characters.count
-        var lenB = self.wordB.characters.count
+        let lenA = self.wordA.characters.count
+        let lenB = self.wordB.characters.count
         
         if lenA != lenB {
             return false
@@ -92,7 +91,7 @@ class Words {
 
 
 //: The declaration was incorrect. it was originally using a colon instead of an equals sign and forgot the parenthesis at the end.
-//: Instead or return nil, we should return true.
+//: Instead or return nil, we should return true. I also changed the function from a class function to a regular function. I also changed the lenA and lenB to constants because they are never altered or changed.
     
     
 }
